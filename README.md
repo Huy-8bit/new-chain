@@ -1,53 +1,43 @@
-# Getting Started with Create React App
+# Getting Started with Create new chain
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This project creeated new chain by using golang . (golang version  <= 1.18.10 )
 
 ## Available Scripts
 
 In the project directory, you can run:
 
-### `yarn start`
+### `go mod tidy`
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+Install all dependencies for the project to run 
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+### `go run main.go`
 
-### `yarn test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `yarn build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `yarn eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+Runs the app in the development mode.
 
 
-### `NODE_OPTIONS=--openssl-legacy-provider npm start`
 
-start with openssl-legacy-provider
+### 'go run main.go <command>'
+This command runs the app in the development mode with a specific command. Below is a list of available commands you can use:
 
-## Learn More
+#### 'createwallet'
+Creates a new wallet and prints the address. Use this to generate new addresses for transactions.
+#### listaddresses
+Lists all addresses from the wallet file. This is useful to see all the participants in the blockchain.
+#### 'createblockchain -address ADDRESS'
+Initializes a blockchain and sends the genesis block reward to the specified address. Essential for starting your blockchain.
+#### 'getbalance -address ADDRESS'
+Retrieves and displays the balance of the specified address. Use this to check how many coins a wallet holds.
+#### 'printchain'
+Prints all the blocks in the blockchain. This command is helpful for debugging and verifying the chain's integrity.
+#### 'send -from FROM -to TO -amount AMOUNT'
+Sends the specified amount of coins from one address to another. This is the primary transaction command.
+#### 'reindexutxo'
+Rebuilds the UTXO set for the blockchain. This is important for maintaining the state of transactions.
+#### 'startnode -miner ADDRESS'
+Starts a node in the blockchain network. If the -miner flag is set, it enables mining and sends rewards to the provided address. Use this to participate in the network and earn rewards through mining.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
-To learn React, check out the [React documentation](https://reactjs.org/).
-# webchatFE
-# new-chain
+### `go build`
+
+Builds the app for production to the `build` folder.
+
